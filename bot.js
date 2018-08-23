@@ -2,6 +2,12 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
+if (!fs.existsSync("id.json")) {
+  console.log("put your discord token inside id.json!");
+  process.exit(1);
+} else {
+  id = JSON.parse(fs.readFileSync("id.json"));
+}
 var english  = JSON.parse(fs.readFileSync("./words.json"));
 client.on('ready', () => {
 
@@ -34,23 +40,24 @@ function runScript(msg) {
 e += " " + item;
    });
    msg.channel.send(e);
-   runScript(msg) }
+   if (run == true) {
+   runScript(msg)
+ } }
    , 5000);
 }
 var run = true;
 client.on('message', async msg => {
-  if (msg.author.id == "302579946302210081") {
+  if (msg.author.id == id.id) {
   if (msg.content == ('!runbot')) {
+    console.log("starting...");
     run = true;
     runScript(msg)
     }
-    if (msg.content.startsWith('CAZN!ENDSCRIPTA')) {
+    if (msg.content.startsWith('!endbot')) {
+      console.log("stopping...");
       run = false;
 }
 }
 });
-var id = fs.readFileSync("id.json");
-id = id.toString().replace(/\r?\n|\r/g, "");
-console.log("using id " + id);
 
-client.login(id);
+client.login(id.token);
