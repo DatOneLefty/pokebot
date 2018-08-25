@@ -4,7 +4,7 @@ PokeBot makes you be able to easily get XP using the Pokecord discord bot.
 ### WARNING! User accounts acting as bots can get you banned on discord!
 
 ## installation
-1. make sure you have node.js and npm installed
+1. make sure you have node.js, npm, and git installed
 2. run `git clone https://github.com/DatOneLefty/pokebot`
 3. using terminal, go to the directory
 4. create your `id.json` (explained below)

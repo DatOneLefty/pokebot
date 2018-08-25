@@ -47,7 +47,7 @@ e += " " + item;
 }
 var run = true;
 client.on('message', async msg => {
-  if (msg.author.id == id.id) {
+  if (msg.author.tag == id.name) {
   if (msg.content == ('!runbot')) {
     console.log("starting...");
     run = true;

@@ -1,6 +1,7 @@
 # Logs
 id.json
 logs
+pok_gen*
 *.log
 npm-debug.log*
 yarn-debug.log*
