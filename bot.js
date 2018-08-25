@@ -33,7 +33,7 @@ function getRandom(arr, n) {
     return result;
 }
 function runScript(msg) {
-
+  console.log("sending messages...")
   setTimeout(function() {
    e = ""
    getRandom(english,10).forEach(function(item) {
@@ -47,15 +47,22 @@ e += " " + item;
 }
 var run = true;
 client.on('message', async msg => {
-  if (msg.author.tag == id.name) {
   if (msg.content == ('!runbot')) {
+    if (msg.author.tag == id.name) {
     console.log("starting...");
     run = true;
     runScript(msg)
-    }
+  } else {
+    console.log("warning! someone tried running the command! their id is " + msg.author.tag);
+  }
     if (msg.content.startsWith('!endbot')) {
+      if (msg.author.tag == id.name) {
       console.log("stopping...");
       run = false;
+    } else {
+      console.log("warning! someone tried running the command! their id is " + msg.author.tag);
+
+    }
 }
 }
 });
