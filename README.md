@@ -18,7 +18,7 @@ PokeBot makes you be able to easily get XP using the Pokecord discord bot.
 ```
 {
   "token": "[your discord token]",
-  "id":"[your discord id]"
+  "name":"[discordname#number]"
 }
 ```
 3. look how to find these on google, I possibly include them with pictures later.
